@@ -3,6 +3,7 @@
 ###
 
 <p align="left">Made by IXR<br>ORIGINAL CODE BEFORE I MODIFIED WAS BY KORBEN: https://github.com/hak5/usbrubberducky-payloads/tree/master/payloads/library/credentials/Duckie-Harvest</p>
+<p>I am NOT responsible for the misuse of this, this was made for educational purposes and for experimentation on devices I own. Use responsibly.</p>
 
 ###
 
